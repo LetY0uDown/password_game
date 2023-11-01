@@ -1,4 +1,5 @@
 use std::ops::RangeInclusive;
+use std::process::exit;
 use crate::game::game::{Difficulty, Game};
 use crate::io::io::{print, read_string};
 use colored::Colorize;
@@ -45,12 +46,16 @@ fn main() {
 
         if input == "n" {
             println!("Goodbye, {}", name.clone());
-            break
+            exit(0);
         }
 
         if input == "y" {
             println!("Here were go again!");
             continue
         }
+
+        break
     }
+
+    println!("What have you done?");
 }

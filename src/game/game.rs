@@ -112,15 +112,11 @@ impl Game {
     }
 
     fn update_att(&mut self) -> bool {
-        if self.att_left == 0 {
-            return false;
-        }
-
         self.att_left -= 1;
 
         println!("You have {} more attempts", self.att_left);
 
-        return true;
+        return self.att_left != 0
     }
 
     fn gen_pass(range: RangeInclusive<i32>) -> i32 {
